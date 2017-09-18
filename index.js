@@ -7,7 +7,7 @@ const app = express();
 
 var sessions = {};
 
-app.set("port", 420);
+app.set("port", 8080);
 app.use(bodyParser.urlencoded({ extended : false}));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "index")));
