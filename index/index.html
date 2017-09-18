@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Sharer</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="script/server.js"></script>
+    <script src="script/login.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="style/loginbox.css" />
+    <link rel="stylesheet" type="text/css" href="style/theme.css" />
+</head>
+<body class="maintheme">
+    <button id="logout-button" class="invisible">Logout</button>
+    <div id="login-box" class="normal-login-box">
+        <div class="inner-login-box">
+            <label for="classname-box">Class Name:</label>
+            <input id="classname-box" class="login-textbox" type="text" />
+            <br /> <br />
+            <label for="password-box">Password:</label>
+            <input id="password-box" class="login-textbox" type="password" />
+            <br /> <br />
+            <div id="login-status-box"></div>
+            <button id="login-button">Login</button>
+        </div>
+    </div>
+</body>
+</html>

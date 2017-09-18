@@ -1,0 +1,9 @@
+﻿.maintheme 
+{
+    background: repeating-linear-gradient(#c4badc, #9483bd, #c4badc);
+}
+
+.invisible
+{
+    display: none;
+}
