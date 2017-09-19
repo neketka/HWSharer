@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, "index")));
 
 function generateSession(user, pass) 
 {
-    let session = {};
+    var session = {};
     session.token = uuidv4();
     session.timeout = setTimeout(function()
     {

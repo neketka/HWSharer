@@ -15,7 +15,12 @@ $(document).ready(function ()
         postServer("/check-refresh-session", {token: localStorage.sessionToken}, function(response)
         {
             if (response.success)
+            {
+                state = response.memberType;
                 sessionToken = localStorage.sessionToken;
+                state = localStorage.memberType;
+                $("#logout-button").toggleClass("invisible", false);
+            }
         });
     var $login_statusbox = $("#login-status-box");
     $("#login-button").click(function () 
@@ -35,6 +40,7 @@ $(document).ready(function ()
                 state = response.memberType;
                 sessionToken = response.token;
                 localStorage.sessionToken = sessionToken;
+                localStorage.memberType = state;
                 $("#login-box").toggleClass("hidden-login-box", true);
                 $("#logout-button").toggleClass("invisible", false);
             }
