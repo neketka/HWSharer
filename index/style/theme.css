@@ -1,9 +1,15 @@
 ﻿.maintheme 
 {
-    background-color:#c4badc;
+    background-color:#d9ead3;
 }
 
 .invisible
 {
     display: none;
+}
+
+button 
+{
+    background-color: #efefef;
+    border: black 1px 1px;
 }
