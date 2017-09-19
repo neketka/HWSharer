@@ -8,3 +8,6 @@ function postServer(command, data, success, fail=0)
     if (fail)
         call.fail(success);
 }
+
+//localhost:8080
+//http://hwsharer-hwsharer.7e14.starter-us-west-2.openshiftapps.com

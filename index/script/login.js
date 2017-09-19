@@ -20,8 +20,24 @@ $(document).ready(function ()
                 sessionToken = localStorage.sessionToken;
                 state = localStorage.memberType;
                 $("#logout-button").toggleClass("invisible", false);
+                $("#login-box").toggleClass("hidden-login-box", true);
             }
         });
+    $("#classname-box").on("keypress", function(e)
+    {
+        var code = e.keyCode || e.which;
+        if(code === 13)
+            $("#password-box").focus();
+    });
+    $("#password-box").on("keypress", function(e)
+    {
+        var code = e.keyCode || e.which;
+        if(code === 13)
+        {
+            $("#login-button").trigger("click");
+            $(document).focus();
+        }
+    });
     var $login_statusbox = $("#login-status-box");
     $("#login-button").click(function () 
     {
