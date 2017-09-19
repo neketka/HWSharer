@@ -5,6 +5,7 @@ function logoutSession()
     localStorage.sessionToken = undefined;
     $("#logout-button").toggleClass("invisible", true);
     $("#login-box").toggleClass("hidden-login-box", false);
+    $("#login-box").prop('disabled', false);
     $("#classname-box").val("");
     $("#password-box").val("");
 }
@@ -21,6 +22,7 @@ $(document).ready(function ()
                 state = localStorage.memberType;
                 $("#logout-button").toggleClass("invisible", false);
                 $("#login-box").toggleClass("hidden-login-box", true);
+                $("#login-box").prop('disabled', true);
             }
         });
     $("#classname-box").on("keypress", function(e)
@@ -57,8 +59,9 @@ $(document).ready(function ()
                 sessionToken = response.token;
                 localStorage.sessionToken = sessionToken;
                 localStorage.memberType = state;
-                $("#login-box").toggleClass("hidden-login-box", true);
                 $("#logout-button").toggleClass("invisible", false);
+                $("#login-box").toggleClass("hidden-login-box", true);
+                $("#login-box").prop('disabled', true);
             }
             else
             {

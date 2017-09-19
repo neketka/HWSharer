@@ -5,9 +5,9 @@ function postServer(command, data, success, fail=0)
 {
     var call = $.ajax({type: "POST", url: ("http://hwsharer-hwsharer.7e14.starter-us-west-2.openshiftapps.com" + command), timeout: 4000, 
         data: data, success: success });
-    if (fail)
+    if (fail !== 0)
         call.fail(success);
 }
 
-//localhost:8080
+//http://localhost:8080
 //http://hwsharer-hwsharer.7e14.starter-us-west-2.openshiftapps.com

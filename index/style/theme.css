@@ -1,6 +1,6 @@
 ﻿.maintheme 
 {
-    background-color:#d9ead3;
+    background-color:#faf4f3;
 }
 
 .invisible
@@ -10,6 +10,11 @@
 
 button 
 {
-    background-color: #efefef;
-    border: black 1px 1px;
+    background-color: whitesmoke;
+    border: solid black 1px;
+}
+
+button:active
+{
+    box-shadow: inset 0 0 2px 1px black;
 }

@@ -8,9 +8,10 @@
     left: 0;
     right: 0;
     top: 32.5%;
-    transition: top 1.5s;
+    opacity: 1;
+    transition: opacity 0.5s;
     transition-timing-function: ease-out;
-    background-color: #f3f3f3;
+    background-color: #D8D7D7;
     box-shadow: 0 0 1px 1px black;
     font-family: "Alegreya Sans", "Lucida Grande", sans-serif;
     font-size: 20px;
@@ -18,8 +19,8 @@
 
 .hidden-login-box 
 {
-    top: -100vh;
-    transition: top 1.5s;
+    opacity: 0;
+    transition: opacity 0.5s;
 }
 
 .inner-login-box 
