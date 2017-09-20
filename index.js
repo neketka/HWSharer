@@ -36,7 +36,7 @@ function generateSession(user, pass)
 app.post("/login", function(request, response) 
 {
     //Input {class="", pass=""}
-    //Output {success: bool, memberType="admin : member", token:""}
+    //Output {success: bool, memberType="admin : mod : member", token:""}
     console.log(request.body);
     response.setHeader('Content-Type', 'application/json');
     var session = generateSession(request.body.class, request.body.pass);
