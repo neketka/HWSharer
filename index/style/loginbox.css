@@ -1,26 +1,8 @@
-.normal-login-box 
+#login-box
 {
     width: 55vh;
     height: 35vh;
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    top: 32.5%;
-    opacity: 1;
-    transition: opacity 0.5s;
-    transition-timing-function: ease-out;
-    background-color: #D8D7D7;
-    box-shadow: 0 0 1px 1px black;
-    font-family: "Alegreya Sans", "Lucida Grande", sans-serif;
-    font-size: 20px;
-}
-
-.hidden-login-box 
-{
-    opacity: 0;
-    transition: opacity 0.5s;
+    top: 32.5vh;
 }
 
 .inner-login-box 

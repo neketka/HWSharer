@@ -1,4 +1,145 @@
-.normal-member-box
+:root
 {
-    
+    --member-box-width: 70vw;
+    --member-box-height: 90vh;
+    --sidebar-width: 250px;
+    --sidebar-panel-height: 40px;
+    --sidebar-selector-height: 80px;
+    --member-problem-folded-height: 60px;
+    --member-problem-unfolded-height: 600px;
+    --member-problem-padding: 20px;
+    --member-problem-post-buttons-padding: 10px;
+}
+
+#member-box
+{
+    width: var(--member-box-width);
+    height: var(--member-box-height);
+    top: 5vh;
+    background-color: white;
+}
+
+#member-sidebar 
+{
+    position: relative;
+    top: 0;
+    left: 0; 
+    width: var(--sidebar-width);
+    height: var(--member-box-height);
+    border-right: solid black 1px;
+}
+
+#member-sidebar-classname
+{
+    position: absolute;
+    width: var(--sidebar-width);
+    height: var(--sidebar-panel-height);
+    line-height: var(--sidebar-panel-height);
+    top: 0;
+    left: 0;
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: solid black 1px;
+}
+
+#member-sidebar-bottom
+{
+    position: absolute;
+    width: var(--sidebar-width);
+    height: var(--sidebar-panel-height);
+    line-height: var(--sidebar-panel-height);
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    vertical-align: middle;
+    border-top: solid black 1px;
+}
+
+#member-sidebar-worklist
+{
+    position: absolute;
+    top: calc(var(--sidebar-panel-height) + 1px);
+    width: var(--sidebar-width);
+    height: calc(var(--member-box-height) - calc(var(--sidebar-panel-height) * 2));
+    overflow-y: auto;
+    background-color: #F3F1E3;
+}
+
+#member-problem-holder
+{
+    position: absolute;
+    left: calc(var(--sidebar-width) + 1px);
+    top: 0;
+    width: calc(var(--member-box-width) - calc(var(--sidebar-width) + 1px));
+    height: var(--member-box-height);
+    overflow-y: auto;
+}
+
+.member-assignment-selector
+{
+    border-bottom: solid black 1px;
+    background-color: wheat;
+    width: 100%;
+    height: var(--sidebar-selector-height);
+    line-height: var(--sidebar-selector-height);
+    text-align: center;
+    vertical-align: middle;
+}
+
+.member-assignment-selected
+{
+    background-color: #D2BDFD;
+}
+
+.member-problem
+{
+    vertical-align: center;
+    line-height: var(--member-problem-folded-height);
+    padding-left: var(--member-problem-padding);
+    height: var(--member-problem-folded-height);
+    overflow-y: hidden;
+    background-color: #D2BDFD;
+    border-bottom: solid black 1px;
+}
+
+.member-problem-unfolded
+{
+    height: var(--member-problem-unfolded-height);
+}
+
+.member-problem-unfolded #close-button
+{
+    background-color: blue;
+}
+
+#member-problem-right-floater
+{
+    display: inline-flex;
+    float: right;
+    height: var(--member-problem-folded-height);
+    line-height: var(--member-problem-folded-height);
+    vertical-align: center;
+    align-content: center;
+}
+
+#member-problem-right-floater button
+{
+    display: inline-block;
+}
+
+#member-problem-post-buttons
+{
+    display: inline-flex;
+    background: wheat;
+    padding: var(--member-problem-post-buttons-padding) var(--member-problem-post-buttons-padding) 
+        var(--member-problem-post-buttons-padding) var(--member-problem-post-buttons-padding);
+    align-content: center;
+    border-left: solid black 1px;
+    border-bottom: solid black 1px;
+}
+
+#member-problem-bolded-add
+{
+    padding-left: 30px;
+    padding-right: 15px;
 }

@@ -11,12 +11,35 @@
     <link rel="stylesheet" type="text/css" href="style/memberbox.css" />
     <link rel="stylesheet" type="text/css" href="style/theme.css" />
 </head>
-<body class="maintheme">
+<body class="maintheme invisible">
     <button id="logout-button" class="invisible">Logout</button>
-    <div id="member-box" class="normal-member-box">
-        
+    <div id="member-box" class="normal-box hidden-box">
+        <div id="member-sidebar">
+            <div id="member-sidebar-classname">Class name goes here</div>
+            <div id="member-sidebar-worklist"></div>
+            <div id="member-sidebar-bottom">
+                <button id="member-sidebar-discussion-button">Discussion</button>
+                <button id="member-sidebar-refresh-button">&#x21ba;</button>
+            </div>
+        </div>
+        <div id="member-problem-holder">
+            <div id="member-problem-template" class="member-problem">
+                <div id="member-problem-top-pane">
+                    <span id="member-problem-name">Problem</span>
+                    <span id="member-problem-right-floater">
+                        <button id="close-button">Open</button>
+                        <b id="member-problem-bolded-add">Add:</b>
+                        <span id="member-problem-post-buttons">
+                            <button id="member-problem-post-image">Image</button>
+                            <button id="member-problem-post-text">Text</button>
+                            <button id="member-problem-post-math">Math</button>
+                        </span>
+                    </span>
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="login-box" class="normal-login-box">
+    <div id="login-box" class="normal-box">
         <div class="inner-login-box">
             <label for="classname-box">Class Name:</label>
             <input id="classname-box" class="login-textbox" type="text" />

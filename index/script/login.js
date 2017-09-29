@@ -1,10 +1,32 @@
+function loginSession(ssessionToken, sstate)
+{
+    memberType = sstate;
+    sessionToken = ssessionToken;
+    sessionStorage.memberType = sstate;
+    sessionStorage.sessionToken = ssessionToken;
+    $("#logout-button").toggleClass("invisible", false);
+    $("#login-box").toggleClass("hidden-box", true);
+    $("#login-box").prop('disabled', true);
+    switch(sstate)
+    {
+        case "admin":
+            break;
+        case "mod":
+            break;
+        case "member":
+            loadMemberWindow();
+            break;
+    }
+}
+
 function logoutSession()
 {
     postServer("/kill-session", {token: sessionToken});
+    closeMemberWindow();
     sessionToken = undefined;
-    localStorage.sessionToken = undefined;
+    sessionStorage.sessionToken = undefined;
     $("#logout-button").toggleClass("invisible", true);
-    $("#login-box").toggleClass("hidden-login-box", false);
+    $("#login-box").toggleClass("hidden-box", false);
     $("#login-box").prop('disabled', false);
     $("#classname-box").val("");
     $("#password-box").val("");
@@ -12,18 +34,12 @@ function logoutSession()
 
 $(document).ready(function () 
 {
-    if (localStorage.sessionToken !== undefined)
-        postServer("/check-refresh-session", {token: localStorage.sessionToken}, function(response)
+    setTimeout(function() { $(document.body).toggleClass("invisible", false); }, 150);
+    if (sessionStorage.sessionToken !== undefined)
+        postServer("/check-refresh-session", {token: sessionStorage.sessionToken}, function(response)
         {
             if (response.success)
-            {
-                state = response.memberType;
-                sessionToken = localStorage.sessionToken;
-                state = localStorage.memberType;
-                $("#logout-button").toggleClass("invisible", false);
-                $("#login-box").toggleClass("hidden-login-box", true);
-                $("#login-box").prop('disabled', true);
-            }
+                loginSession(sessionStorage.sessionToken, sessionStorage.memberType);
         });
     $("#classname-box").on("keypress", function(e)
     {
@@ -54,26 +70,13 @@ $(document).ready(function ()
         postServer("/login", {class: classname, pass: password}, function(response)
         {
             if (response.success)
-            {
-                state = response.memberType;
-                sessionToken = response.token;
-                localStorage.sessionToken = sessionToken;
-                localStorage.memberType = state;
-                $("#logout-button").toggleClass("invisible", false);
-                $("#login-box").toggleClass("hidden-login-box", true);
-                $("#login-box").prop('disabled', true);
-            }
+                loginSession(response.token, response.memberType);
             else
-            {
                 $login_statusbox.html(response.message);
-            }
         }, function ()
         {
             $login_statusbox.html("Server timeout!");
         });
     });
-    $("#logout-button").click(function ()
-    {
-        logoutSession();
-    });
+    $("#logout-button").click(logoutSession);
 });
